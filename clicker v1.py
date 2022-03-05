@@ -1,5 +1,5 @@
 from tkinter import *
-import random
+import tkinter as tk
 
 window = Tk()
 window.configure(background='grey')
@@ -28,25 +28,12 @@ def countDown():
     backgroundIndicator()
 
 
-
-
-colorBackground = random.choice(['green', 'grey', 'red'])
-
-
-def onHover(self):
-    window.configure(background='yellow')
-    
-def onLeave(self):
-    backgroundIndicator()
-
-
 labelUp = Button(window, text="Up", font=("Arial", 10),  width = 25, anchor='center', command= countUp, highlightthickness = 0, bd = 0)
 labelUp.pack()
 labelUp.pack(padx=20, pady=10)
 
-labelCounter = Label(window, text=0, font=("Arial", 10), width = 25, anchor='center')
-labelCounter.bind("<Enter>", onHover)
-labelCounter.bind("<Leave>", onLeave)
+labelCounter = Button(window, text=0, font=("Arial", 10), width = 25, anchor='center', highlightthickness = 0, bd = 0)
+labelCounter.pack()
 labelCounter.pack(padx=20, pady=10)
 
 labelDown = Button(window, text="Down", font=("Arial", 10), width = 25, anchor='center', command=countDown, highlightthickness = 0, bd = 0)
